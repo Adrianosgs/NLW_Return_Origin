@@ -101,25 +101,9 @@ img {
 }
 
 .box-atendimento {
-  position: absolute;
-  margin-top: 4rem auto 6rem auto;
-
-  width: 16.7rem;
-  height: 9rem;
-
-  left: 27.1rem;
-  top: 86.8rem;
 }
 
 .box-disponiveis {
-  position: absolute;
-  margin-top: 6rem auto 6rem auto;
-
-  width: 18.3rem;
-  height: 9rem;
-
-  left: 27.9rem;
-  top: 101.8rem;
 }
 
 .box-mercado {
