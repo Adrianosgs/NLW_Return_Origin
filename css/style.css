@@ -11,7 +11,7 @@
   --primary-color: hsl(170, 100%, 26%);
   --headline: hsl(210, 11%, 15%);
   --paragraph: hsl(210, 9%, 31%);
-  --brand-beige: hsla(39, 100%, 97%, 1);
+  --brand-beige: hsla(39, 100%, 97%);
   --green-light: hsla(148, 23%, 89%, 1);
 }
 
@@ -26,9 +26,6 @@ header {
   margin-right: auto;
   margin-left: auto;
   margin-top: 4.1rem;
-  background: var(--green-light);
-  position: relative;
-  height: 108rem;
 }
 
 h4 {
@@ -67,7 +64,6 @@ button {
   font-weight: 700;
 
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 1.6rem;
@@ -76,31 +72,46 @@ button {
   margin-left: auto;
 }
 
-img {
-  width: 26.3rem;
-  height: 34.253rem;
+header img {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 
-  position: absolute;
-  top: 48.6rem;
-  left: 5.6rem;
+  object-position: 0 2rem;
+  width: 26.4rem;
 }
 
 .box-informacoes {
   width: 32.7rem;
-  height: 47rem;
 
-  left: 2.4rem;
-  top: 82.8rem;
+  margin-right: auto;
+  margin-left: auto;
 
+  background: var(--brand-beige);
+  border: 1px solid var(--green-light);
   border-radius: 0.6rem;
-  border: 1px solid #dce9e2;
-  background: #fffaf1;
-  box-sizing: border-box;
 
-  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 6rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
-.box-atendimento {
+.box-info p {
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 1.6rem;
+  line-height: 150%;
+}
+
+.box-info h3 {
+  font-size: 4.8rem;
+  color: var(--headline);
+  line-height: 130%;
+  margin-bottom: 0.4rem;
 }
 
 .box-disponiveis {
