@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
 
+/*------------------------------------Geral---------------------------------*/
+
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +15,8 @@
   --paragraph: hsl(210, 9%, 31%);
   --brand-beige: hsla(39, 100%, 97%);
   --green-light: hsla(148, 23%, 89%, 1);
+
+  --nav-height: 7.2rem;
 }
 
 body {
@@ -21,27 +25,47 @@ body {
   text-align: center;
 }
 
-header {
+.content {
   width: 37.5rem;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 4.1rem;
+  padding: 0 2.4rem;
 }
 
-h4 {
+/*------------------------------------Header---------------------------------*/
+
+header {
+  margin-top: calc(4.1rem + var(--nav-height));
+}
+
+header::before {
+  content: "";
+  width: 100vw;
+  height: calc(108rem + var(--nav-height));
+
+  background-color: var(--green-light);
+  display: block;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+header h4 {
   font-size: 1.4rem;
   color: var(--primary-color);
   margin-bottom: 1.6rem;
 }
 
-h1 {
+header h1 {
   font-size: 3.4rem;
   color: var(--headline);
   margin-bottom: 2.4rem;
   line-height: 130%;
 }
 
-p {
+header p {
   font-size: 1.8rem;
   line-height: 150%;
   font-weight: 400px;
@@ -49,7 +73,7 @@ p {
   margin-bottom: 3.2rem;
 }
 
-button {
+header button {
   background: var(--primary-color);
   border: none;
   margin-bottom: 6rem;
@@ -114,8 +138,20 @@ header img {
   margin-bottom: 0.4rem;
 }
 
-.box-disponiveis {
-}
+/*------------------------------------Nav---------------------------------*/
 
-.box-mercado {
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: var(--nav-height);
+
+  padding: 1.6rem 2.4rem;
+  /*cima, abaixo / dir. esq.*/
+
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
