@@ -9,7 +9,7 @@
 }
 
 :root {
-  font-size: 62.5%;
+  font-size: 62.5%; /* 1rem = 10px*/
   --primary-color: hsl(170, 100%, 26%);
   --headline: hsl(210, 11%, 15%);
   --paragraph: hsl(210, 9%, 31%);
@@ -19,10 +19,17 @@
   --nav-height: 7.2rem;
 }
 
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   font-family: "DM Sans", sans-serif;
   font-size: 1.6rem;
   text-align: center;
+  overflow: overlay;
 }
 
 .content {
@@ -30,6 +37,14 @@ body {
   margin-right: auto;
   margin-left: auto;
   padding: 0 2.4rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 /*------------------------------------Header---------------------------------*/
@@ -40,7 +55,7 @@ header {
 
 header::before {
   content: "";
-  width: 100vw;
+  width: 100%;
   height: calc(108rem + var(--nav-height));
 
   background-color: var(--green-light);
@@ -68,7 +83,7 @@ header h1 {
 header p {
   font-size: 1.8rem;
   line-height: 150%;
-  font-weight: 400px;
+  font-weight: 400;
   color: var(--paragraph);
   margin-bottom: 3.2rem;
 }
@@ -145,9 +160,6 @@ nav {
 
   height: var(--nav-height);
 
-  padding: 1.6rem 2.4rem;
-  /*cima, abaixo / dir. esq.*/
-
   position: fixed;
   top: 0;
   left: 50%;
@@ -163,12 +175,111 @@ nav .content {
 nav.scrool {
   background: var(--primary-color);
   width: 100vw;
+  position: fixed;
+  top: 0;
 }
 
 nav.scrool svg:nth-child(1) path {
   fill: white;
 }
 
-nav.scrool svg:nth-child(2) path {
+nav.scroll button path {
+  stroke: white;
+}
+
+nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/*------------------------------------menu-espandido---------------------------------*/
+body.menu-espandido {
+  overflow: hidden;
+}
+
+body.menu-espandido > :not(nav) {
+  display: none;
+}
+
+.menu,
+.close-menu,
+body.menu-espandido .open-menu {
+  opacity: 0;
+  visibility: hidden;
+}
+
+body.menu-espandido .menu,
+body.menu-espandido .close-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.menu-espandido .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--primary-color);
+
+  width: 100vw;
+  height: 100vh;
+
+  padding-top: var(--nav-height);
+}
+
+body.menu-espandido nav {
+  position: relative;
+}
+
+.menu ul:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  margin-top: 6rem;
+  font-size: 2.4rem;
+  line-height: 3.1rem;
+  font-weight: 700;
+}
+
+.menu ul li a {
+  color: white;
+}
+
+.menu .btn {
+  background: #ffffff;
+  border-radius: 4rem;
+  font-weight: 700;
+
+  display: inline-block;
+  padding: 16px 32px;
+
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  text-transform: uppercase;
+
+  margin-top: 4.8rem;
+  margin-bottom: 8rem;
+
+  color: var(--primary-color);
+}
+
+.links-media {
+  display: flex;
+  gap: 3.2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+body.menu-espandido .logo,
+body.menu-espandido button {
+  position: relative;
+  z-index: 100;
+}
+
+body.menu-espandido .logo path {
+  fill: white;
+}
+
+body.menu-espandido button path {
   stroke: white;
 }
